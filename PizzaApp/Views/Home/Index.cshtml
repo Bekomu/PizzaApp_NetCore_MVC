@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Pizza>
+
+<h2>Pizza List</h2>
+
+@if (ViewBag.Message != null)
+{
+    <hr />
+    <p class="alert alert-danger">@ViewBag.Message</p>
+    <hr />
+}
+
+<hr />
+
+<a asp-controller="Pizza" asp-action="NewPizza" class="btn btn-secondary">Create New Pizza &raquo;</a>
+
+<hr class="my-3" />
+<table class="table table-striped my-5">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Ingredients</th>
+            <th>Commands</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pizza in Model)
+        {
+            <tr>
+                <td>@pizza.Id</td>
+                <td> <img src="~/img/@pizza.ImagePath" alt="@pizza.Name" style="max-width:200px;" /></td>
+                <td>@pizza.Name</td>
+                <td>
+                    @string.Join(", ", pizza.Ingredients.Select(x => x.Name))
+                </td>
+                <td>
+                    <a asp-action="EditPizza" asp-controller="Pizza" asp-route-id="@pizza.Id">Edit | </a>
+                    <a asp-action="DeleteIndex" asp-controller="Pizza" asp-route-id="@pizza.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<hr />
+<h5>You should login for edit, delete and create a pizza.</h5>
+
+
+@section Scripts {
+    <script>
+        $(".table").DataTable();
+
+        $('[data-toggle="tooltip"]').tooltip();
+    </script>
+
+}

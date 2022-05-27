@@ -1,0 +1,42 @@
+﻿
+@model List<Ingredient>
+
+
+<h2>Ingredients List</h2>
+
+@if (ViewBag.Message != null)
+{
+    <hr />
+    <label class="alert alert-danger">Message : @ViewBag.Message</label>
+    <hr />
+}
+
+<hr />
+    <a class="btn btn-secondary" asp-controller="Ingredients" asp-action="NewIngredient">Create New Ingredient &raquo;</a>
+
+<table class="table table-striped mt-4">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Command</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ingredient in Model)
+        {
+            <tr>
+                <td>@ingredient.Id</td>
+                <td>@ingredient.Name</td>
+                <td>
+                    <a asp-controller="Ingredients" asp-action="Delete" asp-route-id="@ingredient.Id">
+                    Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+<h5>You should login for delete and create an ingredients.</h5>

@@ -1,0 +1,14 @@
+﻿@model NewIngredientViewModel
+
+    <h2>New Ingredient</h2>
+    <div class="mt-5">
+        <form asp-action="NewIngredient" asp-controller="Ingredients" method="post" class="m-auto" style="max-width:600px;">
+            <label asp-for="Name">Ingredient Name</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+
+            <div>
+                <input type="submit" class="btn btn-success my-3" value="Save Ingredient" />
+            </div>
+        </form>
+    </div>

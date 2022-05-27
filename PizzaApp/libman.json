@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "jsdelivr",
+      "library": "datatables.net-bs4@1.12.1",
+      "destination": "wwwroot/lib/datatables.net-bs4/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "datatables.net@1.12.1",
+      "destination": "wwwroot/lib/datatables.net/"
+    }
+  ]
+}
