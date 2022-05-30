@@ -11,3 +11,6 @@
 ![edit_pizza_screen](https://i.hizliresim.com/gb527wb.png)
 ----
 ![edit_pizza_screen_2](https://i.hizliresim.com/jeqi6i8.png)
+----
+![delete_pizza_screen]([https://i.hizliresim.com/jeqi6i8.png](https://i.hizliresim.com/iwd5ybj.png))
+
